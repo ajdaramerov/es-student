@@ -1,4 +1,5 @@
 ﻿git version 2.55.0.windows.4
+Python 3.14.2
 cmake version 4.3.2
 GNU Make 4.4.1
 arm-none-eabi-gcc.exe (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)
