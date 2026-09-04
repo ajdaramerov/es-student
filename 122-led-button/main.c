@@ -25,7 +25,7 @@ int main()
 
     while (1)
     {
-        bool current = gpio_get(pin);
+        bool current = gpio_get(BUTTON_PIN);
 
         if (previous == true && current == false)
         {
