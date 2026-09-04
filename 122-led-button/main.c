@@ -11,13 +11,6 @@ bool led = true;
 
 const uint DEBOUNCE_MS = 20;
 
-bool get_button_debounce(uint pin)
-{
-    bool state = gpio_get(pin);
-    sleep_ms(DEBOUNCE_MS);
-    return state && gpio_get(pin);
-}
-
 int main()
 {
     gpio_init(LED_PIN);
@@ -32,7 +25,7 @@ int main()
 
     while (1)
     {
-        bool current = get_button_debounce(BUTTON_PIN);
+        bool current = gpio_get(pin);
 
         if (previous == true && current == false)
         {
