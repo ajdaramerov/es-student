@@ -2,6 +2,7 @@
 #include "hardware/gpio.h"
 #include <stdio.h>
 #include "led.h"
+#include "log.h"
 
 const uint BUTTON_PIN = 24;
 bool previous = true;  
@@ -22,16 +23,20 @@ void handle_command(int command)
     if (command == 'e')
     {
         led_set(true);
-        printf("led on\n");
+        LOG_INF("led on\n");
     }
     else if (command == 'd')
     {
         led_set(false);
-        printf("led off\n");
+        LOG_INF("led off\n");
+    }
+    else if (command == 'v')
+    {
+        log_version();
     }
     else
     {
-        printf("unknown command: %c\n", command);
+        LOG_ERR("unknown command: %c\n", command);
     }
 
 }
@@ -62,7 +67,8 @@ int main()
         {
             continue;
         }
-
+        
+        LOG_DBG("got %c\n", command);
         handle_command(command);
     }
 }
