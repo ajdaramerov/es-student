@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "log.h"
-
+#include "device.h"
 
 void log_version(void)
 {

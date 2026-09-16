@@ -34,6 +34,10 @@ void handle_command(int command)
     {
         log_version();
     }
+    else if (command == 'i')
+    {
+        device_info();
+    }
     else
     {
         LOG_ERR("unknown command: %c\n", command);
@@ -42,13 +46,12 @@ void handle_command(int command)
 }
 
 int main()
-{
+{   
     stdio_init_all();
     led_init();
     gpio_init(BUTTON_PIN);
     gpio_set_dir(BUTTON_PIN, GPIO_IN);
     gpio_pull_up(BUTTON_PIN);
-
     while (1)
     {
         bool current = get_button_debounce(BUTTON_PIN);
@@ -56,7 +59,7 @@ int main()
         if (previous == true && current == false)
         {
             led_toggle();
-            printf("led %s\n", led_is_on() ? "on" : "off");
+            LOG_INF("led %s\n", led_is_on() ? "on" : "off");
         }
 
         previous = current;
