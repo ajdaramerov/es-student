@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "led.h"
 #include "log.h"
+#include "device.h"
 
 const uint BUTTON_PIN = 24;
 bool previous = true;  
