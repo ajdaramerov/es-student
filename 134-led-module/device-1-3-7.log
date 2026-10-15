@@ -3,7 +3,12 @@
 устройство: 2e8a:000a
 серийный номер: 5003151918AD7A1C
 порт: COM5
-начало: 2026-10-15T23:35:06
-   0.001 --> i
-   0.520 <-- i
-итог: принято строк 1
+начало: 2026-10-16T00:06:59
+   0.000 --> i
+   0.015 <-- dbg main:75 got i
+   0.018 <-- project: 134-led-module
+   0.020 <-- repo: https://github.com/ajdaramerov/es-student
+   0.020 <-- board: pico
+   0.022 <-- serial: 5003151918AD7A1C
+   0.023 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+итог: принято строк 6
