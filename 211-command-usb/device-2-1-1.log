@@ -1,0 +1,24 @@
+задание: 2.1.1
+проект: 211-command-usb
+устройство: 2e8a:000a
+серийный номер: 5003151918AD7A1C
+порт: COM5
+начало: 2026-10-15T23:35:21
+   0.000 --> enable
+   0.133 <-- enable
+   0.135 <-- err handle_command:49 unknown command: disienable
+   2.170 --> disable
+   2.314 <-- disable
+   2.315 <-- inf handle_command:37 led off
+   4.624 --> info
+   4.714 <-- info
+   4.715 <-- project: 211-command-usb
+   4.718 <-- repo: https://github.com/ajdaramerov/es-student
+   4.718 <-- board: pico
+   4.719 <-- serial: 5003151918AD7A1C
+   4.721 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   4.721 <-- pico-sdk: 2.3.0
+   6.752 --> nosuchcommand
+   7.015 <-- nosuchcommand
+   7.017 <-- err handle_command:49 unknown command: nosuchcommand
+итог: отправлено команд 4, принято строк 13
