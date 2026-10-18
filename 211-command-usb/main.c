@@ -70,7 +70,7 @@ const struct command_t commands[] = {
     { "cmd_fw_info", fw_info},
     { "cmd_dev_info", dev_info}
 };
-
+ 
 const uint command_count = sizeof(commands) / sizeof(commands[0]);
 
 bool get_button_debounce(uint pin)
