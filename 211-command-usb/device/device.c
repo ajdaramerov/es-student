@@ -29,27 +29,39 @@ struct info_t device_card = {
     .name = "es-cmd-usb"
 };
 
-void dev_info(void) {
-    printf("%-13s 0x%08s %5s %6s 0x%08s", "struct", "address", "size", "offset", "value");
-    printf("%-13s 0x%08s %5s", "device_card", &device_card, sizeof(device_card));
-    printf("- %-13s 0x%08x %5u %6u 0x%08x\n",
-        "revision",
-        &device_card.revision,
-        sizeof(device_card.revision),
-        offsetof(struct info_t, revision),
-        device_card.revision);
-    printf("- %-13s 0x%08x %5u %6u 0x%08x\n",
-        "version",
-        &device_card.version,
-        sizeof(device_card.version),
-        offsetof(struct info_t, version),
-        device_card.version);
-    printf("- %-13s 0x%08x %5u %6u 0x%08x\n",
-        "name",
-        &device_card.name,
-        sizeof(device_card.name),
-        offsetof(struct info_t, name),
-        device_card.name);
-    unsigned fields = sizeof(device_card.version) + sizeof(device_card.name) + sizeof(device_card.revision);
-    printf("fields %u, sizeoff %u, padding %u", fields, sizeof(device_card), fields-sizeof(device_card));
+void dev_info(void)
+{
+    printf("%-13s %-10s %5s %6s %s\n", "struct", "address", "size", "offset", "value");
+    
+    printf("%-13s 0x%08x %5u\n", 
+           "device_card", 
+           (unsigned)&device_card, 
+           (unsigned)sizeof(device_card));
+
+    printf("- %-11s 0x%08x %5u %6u  0x%08x\n",
+           "version",
+           (unsigned)&device_card.version,
+           (unsigned)sizeof(device_card.version),
+           (unsigned)offsetof(struct info_t, version),
+           device_card.version);
+
+    printf("- %-11s 0x%08x %5u %6u  %s\n",
+           "name",
+           (unsigned)device_card.name,
+           (unsigned)sizeof(device_card.name),
+           (unsigned)offsetof(struct info_t, name),
+           device_card.name);
+           
+    printf("- %-11s 0x%08x %5u %6u  %u\n",
+           "revision",
+           (unsigned)&device_card.revision,
+           (unsigned)sizeof(device_card.revision),
+           (unsigned)offsetof(struct info_t, revision),
+           device_card.revision);
+
+
+    unsigned fields = sizeof(device_card.revision) + sizeof(device_card.version) + sizeof(device_card.name);
+    unsigned padding = sizeof(device_card) - fields;
+
+    printf("fields %u, sizeof %u, padding %u\n", fields, (unsigned)sizeof(device_card), padding);
 }
