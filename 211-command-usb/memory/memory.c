@@ -69,43 +69,40 @@ uint32_t bss_variable;
 
 int main(void);
 
-void fw_info() {
-       data_variable++;
-       bss_variable++;
+void fw_info(void) {
+    data_variable++;
+    bss_variable++;
 
-       uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
-       uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
+    uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
+    uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
 
-       uint32_t stack_variable = 1946;
-       uint32_t *heap_variable = malloc(sizeof(uint32_t));
+    uint32_t stack_variable = 1946;
+    uint32_t *heap_variable = malloc(sizeof(uint32_t));
 
-       if (heap_variable != NULL)
-       {
-              *heap_variable = 1951;
-       }
+    if (heap_variable != NULL) {
+        *heap_variable = 1951;
+    }
 
-       printf("%-15s %-14s %s\n", "object", "address", "value");
+    printf("%-15s %-14s %s\n", "object", "address", "value");
 
-       printf("%-15s %p  0x%04x\n", "main",       main,    *main_code);
-       printf("%-15s %p  0x%04x\n", "fw_info",    fw_info, *fw_info_code);
+    printf("%-15s 0x%08x  0x%04x\n", "main",       (unsigned)(uintptr_t)main, *main_code);
+    printf("%-15s 0x%08x  0x%04x\n", "fw_info",    (unsigned)(uintptr_t)fw_info, *fw_info_code);
 
-       printf("%-15s %p\n", "commands", commands);
+    printf("%-15s 0x%08x\n", "commands", (unsigned)(uintptr_t)commands);
 
-       for (int i = 0; i < command_count; i++)
-       {
-              printf("- %-13s %p\n", commands[i].name, commands[i].handler);
-       }
+    for (int i = 0; i < command_count; i++) {
+        printf("- %-13s 0x%08x\n", commands[i].name, (unsigned)(uintptr_t)commands[i].handler);
+    }
 
-       
+    printf("%-15s 0x%08x  %s\n", "DEVICE_PROJECT", (unsigned)(uintptr_t)DEVICE_PROJECT, DEVICE_PROJECT);
+    printf("%-15s 0x%08x  %s\n", "DEVICE_BOARD",   (unsigned)(uintptr_t)DEVICE_BOARD, DEVICE_BOARD);
 
-       printf("%-15s %p  %s\n", "DEVICE_PROJECT", &DEVICE_PROJECT, DEVICE_PROJECT);
-       printf("%-15s %p  %s\n", "DEVICE_BOARD",   &DEVICE_BOARD,   DEVICE_BOARD);
+    printf("%-15s 0x%08x  %u\n", "data_variable",  (unsigned)(uintptr_t)&data_variable, data_variable);
+    printf("%-15s 0x%08x  %u\n", "bss_variable",   (unsigned)(uintptr_t)&bss_variable,  bss_variable);
 
-       printf("%-15s %p  %u\n", "data_variable",  &data_variable, data_variable);
-       printf("%-15s %p  %u\n", "bss_variable",   &bss_variable,  bss_variable);
-
-       printf("%-15s %p  %u\n", "stack_variable", &stack_variable, stack_variable);
-       printf("%-15s %p  %u\n", "heap_variable",  heap_variable,   *heap_variable);
+    printf("%-15s 0x%08x  %u\n", "stack_variable", (unsigned)(uintptr_t)&stack_variable, stack_variable);
+    
+    printf("%-15s 0x%08x  %u\n", "heap_variable",  (unsigned)(uintptr_t)heap_variable,   *heap_variable);
 
     free(heap_variable);
 }
