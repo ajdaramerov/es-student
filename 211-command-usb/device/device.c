@@ -23,15 +23,13 @@ void device_info(void)
     printf("pico-sdk: %s\n", PICO_SDK_VERSION_STRING);
 }
 
-
+struct info_t device_card = {
+    .revision = 2,
+    .version = 0x00010000,
+    .name = "es-cmd-usb"
+};
 
 void dev_info(void) {
-    volatile uint32_t *chip_id = (uint32_t *)(SYSINFO_BASE + SYSINFO_CHIP_ID_OFFSET);
-    const struct info_t device_card = {(*chip_id & SYSINFO_CHIP_ID_REVISION_BITS) >> SYSINFO_CHIP_ID_REVISION_LSB, 
-        PICO_SDK_VERSION_STRING, 
-        PICO_UNIQUE_BOARD_ID_SIZE_BYTES * 2 + 1
-    };
-
     printf("%-13s 0x%08s %5s %6s 0x%08s", "struct", "address", "size", "offset", "value");
     printf("%-13s 0x%08s %5s", "device_card", &device_card, sizeof(device_card));
     printf("- %-13s 0x%08x %5u %6u 0x%08x\n",

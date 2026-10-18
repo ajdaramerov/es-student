@@ -22,6 +22,6 @@ struct info_t
     char name[13];
 };
 
-extern const struct info_t device_card;
+extern struct info_t device_card;
 
 
