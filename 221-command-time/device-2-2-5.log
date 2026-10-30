@@ -1,0 +1,67 @@
+задание: 2.2.5
+проект: 221-command-time
+устройство: 2e8a:000a
+серийный номер: 5003151918AD7A1C
+порт: COM5
+начало: 2026-10-30T04:31:55
+   0.000 --> clk_info
+   0.001 <-- clk_info
+   0.003 <-- clk_ref      12000        12001
+   0.004 <-- clk_sys     125000       125000
+   0.005 <-- clk_peri    125000       125000
+   0.006 <-- clk_usb      48000        48000
+   0.007 <-- clk_adc      48000        48000
+   0.008 <-- rosc             -         5479
+   1.038 --> main_time_reset
+   1.039 <-- main_time_reset
+   1.039 <-- max reset
+   3.088 --> main_time_exec
+   3.088 <-- main_time_exec
+   3.089 <-- iteration avg 2.61 us, max 155 us
+   4.104 --> calc_pi
+   4.105 <-- calc_pi
+   8.748 <-- pi: 3.14159165
+   8.748 <-- time: 4642 ms
+  10.183 --> clk_sys_low
+  10.183 <-- clk_sys_low
+  10.185 <-- inf clk_sys_set:35 clk_sys 62500 kHz
+  11.200 --> clk_info
+  11.201 <-- clk_info
+  11.203 <-- clk_ref      12000        12001
+  11.204 <-- clk_sys      62500        62500
+  11.205 <-- clk_peri     48000        48000
+  11.206 <-- clk_usb      48000        48000
+  11.207 <-- clk_adc      48000        48000
+  11.209 <-- rosc             -         5485
+  12.236 --> uptime
+  12.237 <-- uptime
+  12.238 <-- uptime: 61515 ms
+  14.288 --> uptime
+  14.288 <-- uptime
+  14.289 <-- uptime: 63566 ms
+  15.313 --> main_time_reset
+  15.314 <-- main_time_reset
+  15.314 <-- max reset
+  17.373 --> main_time_exec
+  17.375 <-- main_time_exec
+  17.376 <-- iteration avg 5.32 us, max 249 us
+  18.394 --> calc_pi
+  18.395 <-- calc_pi
+  27.680 <-- pi: 3.14159165
+  27.680 <-- time: 9285 ms
+  29.518 --> clk_sys_default
+  29.519 <-- clk_sys_default
+  29.521 <-- inf clk_sys_set:35 clk_sys 125000 kHz
+  30.534 --> clk_info
+  30.535 <-- clk_info
+  30.536 <-- clk_ref      12000        12001
+  30.538 <-- clk_sys     125000       125000
+  30.539 <-- clk_peri     48000        48000
+  30.541 <-- clk_usb      48000        48000
+  30.542 <-- clk_adc      48000        48000
+  30.543 <-- rosc             -         5478
+  31.569 --> calc_pi
+  31.570 <-- calc_pi
+  36.213 <-- pi: 3.14159165
+  36.214 <-- time: 4642 ms
+итог: отправлено команд 14, принято строк 46
