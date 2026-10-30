@@ -1,0 +1,23 @@
+задание: 2.2.1
+проект: 221-command-time
+устройство: 2e8a:000a
+серийный номер: 5003151918AD7A1C
+порт: COM5
+начало: 2026-10-30T03:16:59
+   0.000 --> clk_info
+   0.172 <-- clk_info
+   0.174 <-- clk_ref      12000        12001
+   0.175 <-- clk_sys     125000       125000
+   0.176 <-- clk_peri    125000       125000
+   0.177 <-- clk_usb      48000        48000
+   0.178 <-- clk_adc      48000        48000
+   0.180 <-- rosc             -         5482
+   2.022 --> info
+   2.119 <-- info
+   2.120 <-- project: 211-command-usb
+   2.121 <-- repo: https://github.com/ajdaramerov/es-student
+   2.121 <-- board: pico
+   2.122 <-- serial: 5003151918AD7A1C
+   2.123 <-- chip: manufacturer 0x927, part 0x0002, revision 2
+   2.124 <-- pico-sdk: 2.3.0
+итог: отправлено команд 2, принято строк 14
