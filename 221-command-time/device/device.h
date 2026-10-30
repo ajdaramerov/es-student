@@ -3,7 +3,7 @@
 #define DEVICE_NAME "es-led-module"
 #define FIRMWARE_VERSION "1.1.0"
 
-#define DEVICE_PROJECT "211-command-usb"
+#define DEVICE_PROJECT "221-command-time"
 #define DEVICE_REPO "https://github.com/ajdaramerov/es-student"
 
 #ifndef DEVICE_BOARD

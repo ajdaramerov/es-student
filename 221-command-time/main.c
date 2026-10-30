@@ -69,6 +69,10 @@ void cmd_clk_info(void) {
     clk_info();
 }
 
+void cmd_uptime(void) {
+    uptime();
+}
+
 const struct command_t commands[] = {
     { "enable", cmd_enable },
     { "disable", cmd_disable },
@@ -80,6 +84,7 @@ const struct command_t commands[] = {
     { "dev_info", cmd_dev_info},
     { "boot_info", cmd_boot_info},
     { "clk_info", cmd_clk_info},
+    { "uptime", cmd_uptime},
 };
  
 const uint command_count = sizeof(commands) / sizeof(commands[0]);
